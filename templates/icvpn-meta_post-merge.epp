@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# BGP
+/opt/icvpn-scripts/mkbgp -4 -d icvpn -x <%= $community %> > /etc/bird/bird.conf.d/icvpn/peers.conf
+/opt/icvpn-scripts/mkbgp -6 -d icvpn -x <%= $community %> > /etc/bird/bird6.conf.d/icvpn/peers.conf
+
+# ROA
+/opt/icvpn-scripts/mkroa -4 -x <%= $community %> > /etc/bird/bird.conf.d/icvpn/peers.roa
+/opt/icvpn-scripts/mkroa -6 -x <%= $community %> > /etc/bird/bird6.conf.d/icvpn/peers.roa
+
+# DNS
+/opt/icvpn-scripts/mkdns -x <%= $community %> > /etc/dnsmasq.d/icvpn.conf
+
+# Reload services
+/usr/sbin/birdc configure
+/usr/sbin/birdc6 configure
+/bin/systemctl restart dnsmasq
+

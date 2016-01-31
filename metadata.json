@@ -1,0 +1,17 @@
+{
+  "name": "ffnw-icvpn",
+  "version": "0.1.0",
+  "author": "Simon Kurka",
+  "summary": "Manages ICVPN connections.",
+  "license": "GPLv2",
+  "source": "https://github.com/ffnw/puppet-icvpn.git",
+  "project_page": "https://github.com/ffnw/puppet-icvpn",
+  "issues_url": "https://github.com/ffnw/puppet-icvpn/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"ffnw-bird","version_requirement":">= 0.1.0"},
+    {"name":"lex-dnsmasq","version_requirement":">= 2.6.1"}
+  ],
+  "data_provider": null
+}
+

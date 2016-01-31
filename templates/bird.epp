@@ -1,0 +1,31 @@
+# DO NOT EDIT!
+# This file is puppet generated.
+
+function icvpn_is_freifunk() {
+  return (net ~ [ '10.0.0.0/8+',
+                  '172.16.0.0/12+',
+                  '104.0.0.0/8+' ]);
+}
+
+function icvpn_is_self_net() {
+  return (net ~ [ <%= join(suffix($self_net, '+'), ',\n    ') %> ]
+}
+
+roa table icvpn_roa {
+    include "icvpn/peers.roa";
+}
+
+filter icvpn_import_filter {
+  if icvpn_is_self_net() then reject;
+  if icvpn_is_freifunk() && (roa_check(icvpn_roa) = ROA_VALID) then accept;
+  reject;
+}
+
+template bgp icvpn {
+  local <%= $source %> as <%= $local_as %>;
+  import filter icvpn_import_filter;
+  export where icvpn_is_freifunk();
+}
+
+include "icvpn/*.conf";
+
