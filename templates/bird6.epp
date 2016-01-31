@@ -23,7 +23,7 @@ filter icvpn_import_filter {
 }
 
 template bgp icvpn {
-  local <%= $source %> as <%= $local_as %>;
+  local <%= ip_address($transfer_net6) %> as <%= $local_as %>;
   import filter icvpn_import_filter;
   export where icvpn_is_freifunk();
 }

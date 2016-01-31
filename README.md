@@ -19,18 +19,19 @@ This puppet module manages ICVPN connections.
 
 ### Setup Requirements
 
-This module requires ffnw-bird and lex-dnsmasq.
+This module requires ffnw-bird, ffnw-network, lex-dnsmasq and inkblot-ipcalc.
 
 ### Beginning with icvpn
 
 ```puppet
 class { '::icvpn':
-  community => 'city',
-  node      => '1',
-  local_as  => 65536,
-  source    => '1.2.3.4',
-  self_net  => '10.x.0.0/16',
-  self_net6 => 'fc00::/48',
+  community     => 'city',
+  node          => '1',
+  local_as      => 65536,
+  transfer_net  => '10.207.0.0/16',
+  transfer_net6 => 'fec0::a:cf:0:0/96',
+  self_net      => '10.x.0.0/16',
+  self_net6     => 'fc00::/48',
 }
 ```
 
@@ -38,12 +39,13 @@ class { '::icvpn':
 
 ```puppet
 class { '::icvpn':
-  community => 'city',
-  node      => '1',
-  local_as  => 65536,
-  source    => '1.2.3.4',
-  self_net  => '10.x.0.0/16',
-  self_net6 => 'fc00::/48',
+  community     => 'city',
+  node          => '1',
+  local_as      => 65536,
+  transfer_net  => '10.207.0.0/16',
+  transfer_net6 => 'fec0::a:cf:0:0/96',
+  self_net      => '10.x.0.0/16',
+  self_net6     => 'fc00::/48',
 }
 ```
 
@@ -53,7 +55,8 @@ class { '::icvpn':
   * community
   * node
   * local\_as
-  * source
+  * transfer\_net
+  * transfer\_net6
   * self\_net
   * self\_net6
 

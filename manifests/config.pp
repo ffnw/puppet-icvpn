@@ -1,5 +1,7 @@
 class icvpn::config inherits icvpn {
 
+  require '::network'
+
   file {
     '/etc/tinc/icvpn/tinc.conf':
       ensure  => file,
@@ -42,6 +44,13 @@ class icvpn::config inherits icvpn {
       ensure  => file,
       mode    => '0744',
       content => epp('icvpn/icvpn-meta_post-merge.epp');
+  }
+
+  network::inet::static { 'icvpn':
+    address => $transfer_net,
+  }
+  network::inet6::static { 'icvpn':
+    address => $transfer_net6,
   }
 
 }
