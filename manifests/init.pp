@@ -1,6 +1,6 @@
 class icvpn (
-  String        $name,
   String        $community,
+  String        $community_node,
   Integer       $local_as,
   String        $source,
   Array[String] $self_net,

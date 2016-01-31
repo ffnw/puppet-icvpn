@@ -25,33 +25,33 @@ This module requires ffnw-bird and lex-dnsmasq.
 
 ```puppet
 class { '::icvpn':
-  name      => 'city1',
   community => 'city',
+  node      => '1',
   local_as  => 65536,
   source    => '1.2.3.4',
   self_net  => '10.x.0.0/16',
   self_net6 => 'fc00::/48',
-)
+}
 ```
 
 ## Usage
 
 ```puppet
 class { '::icvpn':
-  name      => 'city1',
   community => 'city',
+  node      => '1',
   local_as  => 65536,
   source    => '1.2.3.4',
   self_net  => '10.x.0.0/16',
   self_net6 => 'fc00::/48',
-)
+}
 ```
 
 ## Reference
 
 * class icvpn
-  * name
   * community
+  * node
   * local\_as
   * source
   * self\_net

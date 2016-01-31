@@ -1,4 +1,4 @@
-Name = <%= $name %>
+Name = <%= $community %>_<%= $node %>
 Mode = Switch
 Hostnames = yes
 
