@@ -1,6 +1,7 @@
 class icvpn::config inherits icvpn {
 
-  require '::network'
+  require router
+  require network
 
   file {
     '/etc/tinc/icvpn/tinc.conf':
