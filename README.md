@@ -24,7 +24,7 @@ This module requires ffnw-bird, ffnw-network, lex-dnsmasq and inkblot-ipcalc.
 ### Beginning with icvpn
 
 ```puppet
-class { '::icvpn':
+class { 'icvpn':
   community     => 'city',
   node          => '1',
   local_as      => 65536,
@@ -38,7 +38,7 @@ class { '::icvpn':
 ## Usage
 
 ```puppet
-class { '::icvpn':
+class { 'icvpn':
   community     => 'city',
   node          => '1',
   local_as      => 65536,
