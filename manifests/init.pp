@@ -4,8 +4,10 @@ class icvpn (
   Integer       $local_as,
   String        $transfer_net,
   String        $transfer_net6,
-  Array[String] $self_net,
-  Array[String] $self_net6,
+  Array[String] $nets,
+  Array[String] $nets6,
+  Array[String] $nets_self      = [],
+  Array[String] $nets_self6     = [],
 ) inherits icvpn::params {
 
   ($self_net + $self_net6).each | $value | {

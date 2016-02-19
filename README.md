@@ -57,8 +57,10 @@ class { 'icvpn':
   * local\_as
   * transfer\_net
   * transfer\_net6
-  * self\_net
-  * self\_net6
+  * nets
+  * nets6
+  * nets_self (optional, default [])
+  * nets_self6 (optional, default [])
 
 ## Limitations
 
