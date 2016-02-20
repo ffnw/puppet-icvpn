@@ -30,8 +30,8 @@ class { 'icvpn':
   local_as      => 65536,
   transfer_net  => '10.207.0.0/16',
   transfer_net6 => 'fec0::a:cf:0:0/96',
-  self_net      => '10.x.0.0/16',
-  self_net6     => 'fc00::/48',
+  nets          => '10.x.0.0/16',
+  nets6         => 'fc00::/48',
 }
 ```
 
@@ -44,8 +44,10 @@ class { 'icvpn':
   local_as      => 65536,
   transfer_net  => '10.207.0.0/16',
   transfer_net6 => 'fec0::a:cf:0:0/96',
-  self_net      => '10.x.0.0/16',
-  self_net6     => 'fc00::/48',
+  nets          => '10.x.0.0/16',
+  nets6         => 'fc00::/48',
+  nets_self     => '10.x.0.0/21',
+  nets_self6    => 'fc00::/53',
 }
 ```
 
