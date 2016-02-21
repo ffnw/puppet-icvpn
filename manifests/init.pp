@@ -10,7 +10,7 @@ class icvpn (
   Array[String] $nets_self6     = [],
 ) inherits icvpn::params {
 
-  ($self_net + $self_net6).each | $value | {
+  ($nets + $nets6 + $nets_self + $nets_self6).each | $value | {
     validate_ip_address($value)
   }
   
