@@ -13,7 +13,11 @@ class icvpn (
   $allnets = $nets + $nets_self
   $allnets6 = $nets6 + $nets_self6
 
-  ($allnets + $allnets6).each | $value | {
+  $allnets.each | $value | {
+    validate_ip_address($value)
+  }
+
+  $allnets6.each | $value | {
     validate_ip_address($value)
   }
   
