@@ -17,10 +17,10 @@ class icvpn (
   validate_ip_address($transfer_net)
   validate_ip_address($transfer_net6)
 
-  contain bird::install
-  contain bird::config
+  class { 'icvpn::install': } ->
+  class { 'icvpn::config': }
 
-  class { '::bird::install': } ->
-  class { '::bird::config': }
+  contain icvpn::install
+  contain icvpn::config
 
 }
