@@ -1,6 +1,6 @@
 class icvpn (
   String        $community,
-  String        $community_node,
+  String        $node,
   Integer       $local_as,
   String        $transfer_net,
   String        $transfer_net6,
