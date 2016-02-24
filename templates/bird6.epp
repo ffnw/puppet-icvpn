@@ -3,7 +3,7 @@
 
 function icvpn_is_freifunk() {
   return (net ~ [ 'fc00::/7{48,64}',
-                  '2001:bf7::/32+',    # Förderverein Freie Netzwerke e. V.
+                  '2001:bf7::/32+',    # Foerderverein Freie Netzwerke e. V.
                   '2a03:2260::/29+' ]  # Freifunk Rheinland e. V.
          );
 }
