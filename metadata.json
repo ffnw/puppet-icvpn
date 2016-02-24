@@ -9,6 +9,7 @@
   "issues_url": "https://github.com/ffnw/puppet-icvpn/issues",
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-vcsrepo","version_requirement":">= 1.3.2"},
     {"name":"ffnw-bird","version_requirement":">= 0.1.0"},
     {"name":"ffnw-network","version_requirement":">= 0.1.0"},
     {"name":"ffnw-router","version_requirement":">= 0.1.0"},
