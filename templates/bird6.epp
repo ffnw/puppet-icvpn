@@ -9,7 +9,7 @@ function icvpn_is_freifunk() {
 }
 
 function icvpn_is_self_net() {
-  return (net ~ [ <%= join(suffix( ($nets6 + $nets_self6), '+'), ',\n    ') %> ]
+  return (net ~ [ <%= join(suffix($allnets6, '+'), ',\n    ') %> ]
 }
 
 roa table icvpn_roa {
