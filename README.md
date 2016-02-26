@@ -19,7 +19,7 @@ This puppet module manages ICVPN connections.
 
 ### Setup Requirements
 
-This module requires ffnw-bird, ffnw-network, lex-dnsmasq and inkblot-ipcalc.
+This module requires ffnw-bird, ffnw-network, lex-dnsmasq and ffnw-ipcalc.
 
 ### Beginning with icvpn
 
