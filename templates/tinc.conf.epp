@@ -1,4 +1,4 @@
-Name = <%= $community %>_<%= $node %>
+Name = <%= $icvpn::community %>_<%= $icvpn::node %>
 Mode = Switch
 Hostnames = yes
 
