@@ -25,9 +25,11 @@ class icvpn (
   validate_ip_address($transfer_net6)
 
   class { 'icvpn::install': } ->
-  class { 'icvpn::config': }
+  class { 'icvpn::config': } ~>
+  class { 'icvpn::service': }
 
   contain icvpn::install
   contain icvpn::config
+  contain icvpn::service
 
 }
