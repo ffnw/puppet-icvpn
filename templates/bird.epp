@@ -1,3 +1,7 @@
+<%- | $allnets,
+      $transfer_net,
+      $local_as,
+| -%>
 # DO NOT EDIT!
 # This file is puppet generated.
 
@@ -8,7 +12,7 @@ function icvpn_is_freifunk() {
 }
 
 function icvpn_is_self_net() {
-  return (net ~ [ <%= join(suffix($icvpn::allnets, '+'), ',\n    ') %> ]
+  return (net ~ [ <%= join(suffix($allnets, '+'), ',\n    ') %> ]
 }
 
 roa table icvpn_roa {
@@ -22,7 +26,7 @@ filter icvpn_import_filter {
 }
 
 template bgp icvpn {
-  local <%= ip_address($icvpn::transfer_net) %> as <%= $icvpn::local_as %>;
+  local <%= ip_address($transfer_net) %> as <%= $local_as %>;
   import filter icvpn_import_filter;
   export where icvpn_is_freifunk();
 }
