@@ -1,13 +1,14 @@
 class icvpn (
-  String        $community,
-  String        $node,
-  Integer       $local_as,
-  String        $transfer_net,
-  String        $transfer_net6,
-  Array[String] $nets,
-  Array[String] $nets6,
-  Array[String] $nets_self      = [],
-  Array[String] $nets_self6     = [],
+  String           $community,
+  String           $node,
+  Integer          $local_as,
+  String           $transfer_net,
+  String           $transfer_net6,
+  Array[String]    $nets,
+  Array[String]    $nets6,
+  Array[String]    $nets_self      = $icvpn::params::nets_self,
+  Array[String]    $nets_self6     = $icvpn::params::nets_self6,
+  Optional[String] $kernel_table   = $icvpn::params::kernel_table,
 ) inherits icvpn::params {
 
   $allnets = $nets + $nets_self
@@ -33,3 +34,4 @@ class icvpn (
   contain icvpn::service
 
 }
+
