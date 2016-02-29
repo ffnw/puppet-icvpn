@@ -6,14 +6,14 @@
 # This file is puppet generated.
 
 function icvpn_is_freifunk() {
-  return (net ~ [ 'fc00::/7{48,64}',
-                  '2001:bf7::/32+',    # Foerderverein Freie Netzwerke e. V.
-                  '2a03:2260::/29+' ]  # Freifunk Rheinland e. V.
+  return (net ~ [ fc00::/7{48,64},
+                  2001:bf7::/32+,    # Foerderverein Freie Netzwerke e. V.
+                  2a03:2260::/29+ ]  # Freifunk Rheinland e. V.
          );
 }
 
 function icvpn_is_self_net() {
-  return (net ~ [ <%= join(suffix($allnets6, '+'), ',\n    ') %> ]
+  return (net ~ [ <%= join(suffix($allnets6, '+'), ",\n    ") %> ]
 }
 
 roa table icvpn_roa {

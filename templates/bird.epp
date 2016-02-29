@@ -6,13 +6,13 @@
 # This file is puppet generated.
 
 function icvpn_is_freifunk() {
-  return (net ~ [ '10.0.0.0/8+',
-                  '172.16.0.0/12+',
-                  '104.0.0.0/8+' ]);
+  return (net ~ [ 10.0.0.0/8+,
+                  172.16.0.0/12+,
+                  104.0.0.0/8+ ]);
 }
 
 function icvpn_is_self_net() {
-  return (net ~ [ <%= join(suffix($allnets, '+'), ',\n    ') %> ]
+  return (net ~ [ <%= join(suffix($allnets, '+'), ",\n    ") %> ]
 }
 
 roa table icvpn_roa {
