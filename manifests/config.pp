@@ -20,11 +20,17 @@ class icvpn::config inherits icvpn {
   }
 
   file {
+    default:
+      owner => 'root',
+      group => 'root';
     '/etc/bird/bird.conf.d/icvpn/':
       ensure => directory,
-      mode   => '0755',
-      owner  => root,
-      group  => root;
+      mode   => '0755';
+    '/etc/bird/bird.conf.d/icvpn/peers.roa':
+      ensure  => file,
+      replace => false,
+      mode    => '0644',
+      content => '';
     '/etc/bird/bird.conf.d/icvpn.conf':
       ensure  => file,
       mode    => '0644',
@@ -34,13 +40,20 @@ class icvpn::config inherits icvpn {
         local_as     => $local_as,
       }),
       notify  => File['/etc/bird/bird.conf'];
-  } ->
+  }
+
   file {
+    default:
+      owner => 'root',
+      group => 'root';
     '/etc/bird/bird6.conf.d/icvpn/':
       ensure => directory,
-      mode   => '0755',
-      owner  => root,
-      group  => root;
+      mode   => '0755';
+    '/etc/bird/bird6.conf.d/icvpn/peers.roa':
+      ensure  => file,
+      replace => false,
+      mode    => '0644',
+      content => '';
     '/etc/bird/bird6.conf.d/icvpn.conf':
       ensure  => file,
       mode    => '0644',
