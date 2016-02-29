@@ -52,7 +52,7 @@ class icvpn::install inherits icvpn {
     source   => 'https://github.com/freifunk/icvpn-scripts.git',
     revision => 'master',
   } ->
-  vcsrepo { '/opt/icvpn-meta':
+  vcsrepo { '/opt/icvpn-scripts/icvpn-meta':
     ensure   => latest,
     owner    => 'root',
     group    => 'root',
