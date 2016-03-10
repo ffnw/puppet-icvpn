@@ -48,7 +48,6 @@ class { 'icvpn':
   nets6         => 'fc00::/48',
   nets_self     => '10.x.0.0/21',
   nets_self6    => 'fc00::/53',
-  kernel_table  => '42',
 }
 ```
 
@@ -64,7 +63,6 @@ class { 'icvpn':
   * nets6
   * nets_self (optional, default [])
   * nets_self6 (optional, default [])
-  * kernel_table (optional)
 
 ## Limitations
 
