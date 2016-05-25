@@ -7,8 +7,10 @@ class icvpn::install inherits icvpn {
     ensure => installed,
   }
   
-  package { 'git':
-    ensure => installed,
+  if !defined(Package['git']) {
+    package { 'git':
+      ensure => installed,
+    }
   }
 
   package { 'python-yaml':
