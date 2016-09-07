@@ -1,7 +1,6 @@
 class icvpn::install inherits icvpn {
 
   include bird
-  include dnsmasq
 
   package { 'tinc':
     ensure => installed,

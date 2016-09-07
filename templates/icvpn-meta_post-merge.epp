@@ -10,9 +10,6 @@
 /opt/icvpn-scripts/mkroa -4 -x <%= $community %> > /etc/bird/bird.conf.d/icvpn/peers.roa
 /opt/icvpn-scripts/mkroa -6 -x <%= $community %> > /etc/bird/bird6.conf.d/icvpn/peers.roa
 
-# DNS
-/opt/icvpn-scripts/mkdns -x <%= $community %> > /etc/dnsmasq.d/icvpn.conf
-
 # Reload services
 /usr/sbin/birdc configure
 /usr/sbin/birdc6 configure
